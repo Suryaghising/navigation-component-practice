@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //for app bar title
         val appBarConfiguration = AppBarConfiguration(setOf(R.id.fragmentA, R.id.fragmentB))
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
 
         setupActionBarWithNavController(navController, appBarConfiguration)
+        //setup nav controller for navigation among fragments
         bottomNavigationView.setupWithNavController(navController)
     }
 }

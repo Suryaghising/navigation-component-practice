@@ -16,9 +16,13 @@ class FragmentA : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_a, container, false)
         val navController = activity?.let { Navigation.findNavController(it, R.id.fragmentContainerView) }
+        val bundle = Bundle()
+        bundle.putString("message", "Hello from fragment A")
+
         val buttonA: Button = view.findViewById(R.id.buttonA)
+
         buttonA.setOnClickListener {
-            navController?.navigate(R.id.action_fragmentA_to_fragmentB)
+            navController?.navigate(R.id.action_fragmentA_to_fragmentB, bundle)
         }
         return  view
     }

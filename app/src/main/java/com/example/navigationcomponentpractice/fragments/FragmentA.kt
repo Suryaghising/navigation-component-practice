@@ -18,7 +18,9 @@ class FragmentA : Fragment() {
         val navController = activity?.let { Navigation.findNavController(it, R.id.fragmentContainerView) }
         val buttonA: Button = view.findViewById(R.id.buttonA)
         buttonA.setOnClickListener {
-            navController?.navigate(R.id.action_fragmentA_to_fragmentB)
+            val action = FragmentADirections.actionFragmentAToFragmentB()
+            navController?.navigate(action)
+//            navController?.navigate(R.id.action_fragmentA_to_fragmentB)
         }
         return  view
     }
